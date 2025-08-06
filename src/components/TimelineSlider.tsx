@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 interface TimelineSliderProps {
   timeline: Date[];
   temps: number[];
@@ -8,11 +9,23 @@ interface TimelineSliderProps {
 const TimelineSlider: React.FC<TimelineSliderProps> = ({ timeline, temps, onTempChange }) => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
   const [zoomLevel, setZoomLevel] = useState(1);
-  const [range, setRange] = useState<[number, number]>([0, timeline.length - 1]);
-  const [selectedIndex, setSelectedIndex] = useState<number>(timeline.length - 1);
+  const [range, setRange] = useState<[number, number] | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (timeline && timeline.length > 0) {
+      setRange([0, timeline.length - 1]);
+      setSelectedIndex(timeline.length - 1);
+    }
+  }, [timeline]);
+
+  if (!timeline || !temps || timeline.length === 0 || temps.length === 0 || !range || selectedIndex === null) {
+    return <div style={{ color: 'white', padding: '1rem' }}>Loading timeline...</div>;
+  }
 
   const visibleRange = timeline.slice(range[0], range[1] + 1);
-  const zoomedRange = visibleRange.slice(0, Math.floor(visibleRange.length / zoomLevel));
+  const zoomedRange =
+    zoomLevel === 1 ? visibleRange : visibleRange.slice(0, Math.floor(visibleRange.length / zoomLevel));
 
   const presets = {
     'Last 24 Hours': [timeline.length - 24, timeline.length - 1],
@@ -93,6 +106,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     color: 'white',
     borderRadius: '4px',
     cursor: 'pointer',
+    transition: 'background-color 0.2s ease-in-out',
   },
   sliderContainer: {
     position: 'relative',
@@ -110,7 +124,7 @@ const styles: { [key: string]: React.CSSProperties } = {
   },
   tooltip: {
     position: 'absolute',
-    top: '-30px',
+    top: '-36px',
     transform: 'translateX(-50%)',
     backgroundColor: '#333',
     color: 'white',
@@ -118,5 +132,6 @@ const styles: { [key: string]: React.CSSProperties } = {
     borderRadius: '4px',
     fontSize: '0.8rem',
     whiteSpace: 'nowrap',
+    pointerEvents: 'none',
   },
 };
