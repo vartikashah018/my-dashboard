@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dashboard Map + Timeline App
 
 This app visualizes time-based geospatial data on a map with an interactive slider.
@@ -26,3 +27,6 @@ Run the app:
 ```bash
 npm run dev
 ```
+=======
+# my-dashboard
+>>>>>>> d86ab603550084d50e49e723824d32f02265cb2e
