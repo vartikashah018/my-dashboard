@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"pages/index.tsx -> @/components/MapView\":{\"id\":\"pages/index.tsx -> @/components/MapView\",\"files\":[\"static/chunks/_pages-dir-browser_src_components_MapView_tsx.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST='{"pages/index.tsx -> @/components/MapView":{"id":2897,"files":["static/css/ab28570ae691aba6.css","static/chunks/25f4ac2a.a5a4fd43f90f4d79.js","static/chunks/616.c608f7ccc104d84b.js","static/chunks/897.cf34202edcaa6c86.js"]}}';
