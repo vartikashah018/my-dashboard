@@ -1,32 +1,30 @@
-<<<<<<< HEAD
-# Dashboard Map + Timeline App
+# 📊 My Dashboard
 
-This app visualizes time-based geospatial data on a map with an interactive slider.
+An interactive analytics dashboard featuring a dynamic map, slider controls, and real-time data visualization. Built with HTML, CSS, JavaScript, and integrated APIs.
 
-## Stack
-- Next.js + TypeScript
-- Zustand
-- Mapbox GL JS
-- Material UI (Slider)
-- Recharts (Optional)
+---
 
-## Setup
+## 🚀 Features
+
+- 🗺️ Interactive map with location-based data
+- 🎚️ Slider to filter data by time or category
+- 📈 Real-time charts and graphs
+- 🌐 Responsive design for desktop and mobile
+- ⚙️ Easy to customize and extend
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: HTML, CSS, JavaScript
+- **Libraries**: Chart.js, Leaflet.js (or any map library you used)
+- **Tools**: VS Code, Git, GitHub
+
+---
+
+## 📦 Installation
 
 ```bash
-npm install
-```
+git clone https://github.com/vartikashah018/my-dashboard.git
+cd my-dashboard
 
-Create `.env.local`:
-
-```
-NEXT_PUBLIC_MAPBOX_TOKEN=your_token_here
-```
-
-Run the app:
-
-```bash
-npm run dev
-```
-=======
-# my-dashboard
->>>>>>> d86ab603550084d50e49e723824d32f02265cb2e
